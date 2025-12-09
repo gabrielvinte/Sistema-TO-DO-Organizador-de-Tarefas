@@ -78,6 +78,7 @@ def menu():
     print("3 - Editar")
     print("4 - Concluir")
     print("5 - Remover")
+    print("6 - Sair")
 
 
 while True:
@@ -95,3 +96,6 @@ while True:
         concluir_tarefa()
     elif opc == "5":
         remover_tarefa()
+    elif opc == "6":
+        print("fechando...")
+        break
