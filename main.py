@@ -16,7 +16,7 @@ lista_tarefas = ["Estudar", "Trabalhar", "Jogar", "Limpar a pia"]
 
 
 #Condicional para verificar se o usuario quer editar alguma tarefa
-resposta = int(input("\nVocê deseja alterar alguma tarefa ? \n [1]---sim  \n [2]---não \n Escolha: "))
+resposta = int(input("\nVocê deseja alterar alguma tarefa ? \n Digite o numero: \n [1]---sim  \n [2]---não \n Escolha: "))
 print(" ")
 
 #Condicional para editar as tarefas
@@ -44,9 +44,20 @@ if resposta == 1:
         resposta= int(input("Deseja alterar alguma outra tarefa? \n [1]---sim  \n [2]---não \n Escolha: "))
         print("")
 
+    print("\n#--------Lista de Tarefas atualizada--------#")
+    contador = 0
+    while contador < len(lista_tarefas):
+        print(f"[{contador}]----------", lista_tarefas[contador])
+        contador += 1
 
-print("\n#--------Lista de Tarefas atualizada--------#")
-contador = 0
-while contador < len(lista_tarefas):
-    print(f"[{contador}]----------" ,lista_tarefas[contador] )
-    contador += 1
+#Condicional para verificar se o usuário irá digitar apenas os numeros 1 ou 2
+else:
+    while resposta != 1 and resposta != 2:
+        print("Por favor digite o número 1 para sim ou o 2 para não")
+        resposta = int(input("\nVocê deseja alterar alguma tarefa ? \n Digite o numero: \n [1]---sim  \n [2]---não \n Escolha: "))
+
+
+#print para pular linha no terminal
+print("")
+
+
