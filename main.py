@@ -14,6 +14,7 @@ def EditarTarefas(tarefa, indice):
 #lista das tarefas - Essa lista vai ser alterada!!! É apenas um modelo para o codigo funcionar
 lista_tarefas = ["Estudar", "Trabalhar", "Jogar", "Limpar a pia"]
 
+escolha = "entrada" #variável com valor para não repetir a pegunta a linha 40 e linha 52
 
 #Condicional para verificar se o usuario quer editar alguma tarefa
 resposta = int(input("\nVocê deseja alterar alguma tarefa ? \n Digite o numero: \n [1]---sim  \n [2]---não \n Escolha: "))
@@ -34,15 +35,24 @@ if resposta == 1:
 
         #Usuario escolhe qual tarefa ele deseja editar
         contador = 0
-        escolha = int(input("Digite o número da tarefa que deseja editar: "))
 
+        if(escolha == "entrada"):
+            escolha = int(input("Digite o número da tarefa que deseja editar: "))
 
-        #Chamando a funcao para editar a tarefa
-        EditarTarefas(lista_tarefas[escolha], escolha)
+        if  escolha >= 0 and escolha <= (len(lista_tarefas) -1):
+            #Chamando a funcao para editar a tarefa
+            EditarTarefas(lista_tarefas[escolha], escolha)
 
-        #Verificando se o usuario deseja alterar outra tarefa para continuar no loop
-        resposta= int(input("Deseja alterar alguma outra tarefa? \n [1]---sim  \n [2]---não \n Escolha: "))
-        print("")
+            #Verificando se o usuario deseja alterar outra tarefa para continuar no loop
+            resposta= int(input("Deseja alterar alguma outra tarefa? \n [1]---sim  \n [2]---não \n Escolha: "))
+            print("")
+        else:
+            while escolha < 0 or escolha > (len(lista_tarefas) -1):
+                print("Por favor digite o numero da tarefa de acordo com a lista apresentada acima! \n")
+                escolha = int(input("Digite o número da tarefa que deseja editar: "))
+
+                print("")
+
 
     print("\n#--------Lista de Tarefas atualizada--------#")
     contador = 0
