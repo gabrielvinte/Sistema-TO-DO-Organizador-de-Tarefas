@@ -57,11 +57,27 @@ def concluir_tarefa():
         print("Erro ao concluir tarefa, digite um número válido")
 
 
+def remover_tarefa():
+    listar_tarefas()
+    try:
+        n = int(input("Remover qual? "))
+        i = n - 1
+        if 0 <= i < len(lista_tarefas):
+            apagada = lista_tarefas.pop(i)
+            print("removida:", apagada["descricao"])
+            salvar_dados()
+        else:
+            print("não existe")
+    except:
+        print("erro ao remover")
+
+
 def menu():
     print("1 - Adicionar")
     print("2 - Listar")
     print("3 - Editar")
     print("4 - Concluir")
+    print("5 - Remover")
 
 
 while True:
@@ -77,3 +93,5 @@ while True:
         editar_tarefa()
     elif opc == "4":
         concluir_tarefa()
+    elif opc == "5":
+        remover_tarefa()
