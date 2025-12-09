@@ -44,6 +44,15 @@ O sistema utiliza funções específicas para cada operação, como:
 
 Essa organização facilita a leitura, manutenção e expansão do código.
 
+### Interface Tkinter 
+O projeto inclui uma interface simples construída em Tkinter, com:
+- Listbox mostrando todas as tarefas
+- Botões para cada função do sistema
+- Entrada de texto para descrição
+- Select de prioridade
+
+A interface usa exatamente as funções do sistema, sem reescrever a lógica.
+
 ### Como Executar
 
 1. Clone o repositório:
