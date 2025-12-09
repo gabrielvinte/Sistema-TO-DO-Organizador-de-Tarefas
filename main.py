@@ -42,10 +42,26 @@ def editar_tarefa():
         print("erro na edição")
 
 
+def concluir_tarefa():
+    listar_tarefas()
+    try:
+        n = int(input("Qual tarefa você deseja concluir? "))
+        i = n - 1
+        if i >= 0 and i < len(lista_tarefas):
+            lista_tarefas[i]["status"] = "Concluida"
+            print("Tarefa Concluida!")
+            salvar_dados()
+        else:
+            print("Tarefa não encontrada")
+    except:
+        print("Erro ao concluir tarefa, digite um número válido")
+
+
 def menu():
     print("1 - Adicionar")
     print("2 - Listar")
     print("3 - Editar")
+    print("4 - Concluir")
 
 
 while True:
@@ -59,3 +75,5 @@ while True:
         listar_tarefas()
     elif opc == "3":
         editar_tarefa()
+    elif opc == "4":
+        concluir_tarefa()
